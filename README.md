@@ -19,6 +19,7 @@ You can download an example dataset [here](https://drive.google.com/drive/folder
 
 The reconstruction demo is ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
+
 ### 2. The modifications 
 
 Some functions are added to support 3D reconstrcution:
@@ -29,7 +30,7 @@ Some functions are added to support 3D reconstrcution:
 * octofeeder. It publish a real-time point cloud map.
 * vo_loopclosing.cpp. Two functions are added to save the offline map:
   * save_callback(const std_msgs::Bool::ConstPtr& save). It is to save offline point cloud map.
-  * bool saveMapCallback(std_srvs::Trigger::Request& req, std_srvs::Trigger::Response& res). It is to do TSDF reconstruction.
+  * bool saveMapCallback(std_srvs::Trigger::Request& req, std_srvs::Trigger::Response& res). It is to do TSDF reconstruction. Please control the size of your map, as TSDF consumes lots of memory.
   
 
 
