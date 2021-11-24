@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<launch>
+
+
+
+<!--FLVIS######################################################################################################-->
+    <arg name="node_start_delay"  default="1.0" />
+    <param name="/yamlconfigfile" type="string" value="$(find flvis)/launch/ss_ipad/L515.yaml"/>
+    <param name="/voc"            type="string" value="$(find flvis)/voc/voc_orb.dbow3"/>
+
+
+    <!-- Manager -->
+    <node pkg="nodelet" type="nodelet"
+          name="flvis_nodelet_manager" args="manager" output="screen"
+          launch-prefix="bash -c 'sleep 0; $0 $@' ">
+          <param name="num_worker_threads" value="8" />
+    </node>
+
+    <!-- TrackingNode -->
+    <node pkg="nodelet" type="nodelet" args="load flvis/TrackingNodeletClass flvis_nodelet_manager"
+        name="TrackingNodeletClass_loader" output="screen"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+        <remap from="/vo/input_image_1"  to="/camera/aligned_depth_to_color/image_raw"/>
+        <remap from="/vo/input_image_0"        to="/camera/color/image_raw"/>
+    </node>
+
+    <!-- LocalMapNode -->
+<!--    <node pkg="nodelet" type="nodelet" args="load flvis/LocalMapNodeletClass flvis_nodelet_manager"
+          name="LocalMapNodeletClass_loader" output="screen"
+          launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+    </node>-->
+
+    <!-- LoopClosingNode -->
+   <!-- <node pkg="nodelet" type="nodelet" args="load flvis/LoopClosingNodeletClass flvis_nodelet_manager"
+        name="LoopClosingNodeletClass_loader" output="screen"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+    </node>-->
+     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find flvis)/rviz/vio.rviz" />
+
+<!-- Video resizing
+<node pkg="nodelet" type="nodelet" args="standalone image_proc/resize" name="resize_img">
+  <remap from="image" to="/camera/color/image_raw"/>
+  <remap from="camera_info" to="/camera/color/camera_info"/>
+  <remap from="resize_img/image" to="/color"/>
+  <remap from="resize_img/camera_info" to="/color/camera_info"/>
+  <param name="use_scale" value="1" />
+  <param name="scale_height" value="0.75" />
+  <param name="scale_width" value="0.75" />
+
+</node>
+
+<node pkg="nodelet" type="nodelet" args="standalone image_proc/resize" name="resize_img_2">
+
+  <remap from="image" to="/camera/aligned_depth_to_color/image_raw"/>
+  <remap from="camera_info" to="/camera/aligned_depth_to_color/camera_info"/>
+
+  <remap from="resize_img_2/image" to="/depth"/>
+  <remap from="resize_img_2/camera_info" to="/depth/camera_info"/>
+
+   <param name="use_scale" value="1" />
+   <param name="scale_height" value="0.75" />
+   <param name="scale_width" value="0.75" />
+</node>-->
+
+
+
+</launch>

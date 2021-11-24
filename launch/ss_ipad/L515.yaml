@@ -1,0 +1,78 @@
+#type_of_vi:
+#0---d435i
+#1---euroc mav dataset
+#2---d435+pixhawk
+#[ -0.0038796, 0.0279540, 0.9996017, 0.004,
+#-0.9999602, 0.0079265, -0.004102, 0.012,
+#-0.0080381, -0.9995778, 0.0279222, -0.002,
+#0.0, 0.0, 0.0, 1.0]
+type_of_vi: 5
+#depth image is aligned to left cam0
+image_width: 960
+image_height: 540
+cam0_intrinsics: [681.263, 681.481, 480.922, 283.406] #[454.175, 457.32, 320.615,188.937] #[908.351, 908.641, 641.2295, 377.8741] #   # #  # # # ##fx fy cx cy #
+cam0_distortion_coeffs: [0.172308549284935, -0.543145477771759, -0.0031701899133622646, 0.001042004325427115]#k1 k2 r1 r2
+depth_factor: 1000.0
+T_imu_cam0:
+[0.9999820, -0.0059984,  0.0000960, -0.012,
+0.0059984, 0.9994701, -0.0319915, 0.002,
+0.0000960, 0.0319915, 0.9994881, 0.004,
+0.0, 0.0, 0.0, 1.0]
+
+
+
+is_lite_version:   False
+
+##vifusion parameter
+#Madgwick beta
+vifusion_para1: 0.15
+#proportion of vision feedforware(roll and pich)
+vifusion_para2: 0.00001
+#acc-bias feedback parameter
+vifusion_para3: 0.3
+#gyro-bias feedback parameter
+vifusion_para4: 0.5
+#acc saturation level
+vifusion_para5: 0.8
+#gyro saturation level
+vifusion_para6: 0.6
+
+
+#feature relate parameter
+#max features in a grid
+feature_para1: 50
+#min features in a grid
+feature_para2: 25
+#distance of features
+feature_para3: 5
+#goodFeaturesToTrack detector maxCorners
+feature_para4: 800
+#goodFeaturesToTrack detector qualityLevel
+feature_para5: 0.001
+#goodFeaturesToTrack detector minDistance
+feature_para6: 5
+
+
+#LocalMapThread
+output_sparse_map: False
+window_size:       8
+
+#LoopClosureTheread
+#define lcKFStart
+lcKFStart: 25
+#define lcKFDist
+lcKFDist: 18
+#define lcKFMaxDist
+lcKFMaxDist: 50
+#define lcKFLast
+lcKFLast: 20
+#define lcNKFClosest
+lcNKFClosest: 2
+#define ratioMax
+ratioMax: 0.5
+#define ratioRansac
+ratioRansac: 0.5
+#define minPts
+minPts: 20
+#define minScore
+minScore: 0.12
