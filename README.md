@@ -6,3 +6,30 @@ The camera pose is outputted by FLVIS, and the 3D model is from PCL/open3d.
 
 Beyond the original dependecies of FLVIS, [open3d](http://www.open3d.org/) should be installed too.
 
+### 1. Run the examples
+
+Run the demo:
+
+```
+roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
+rosrun flvis play_bag_from_ipad ~/corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
+
+```
+You can download an example dataset [here](https://drive.google.com/drive/folders/1gPuoolWCTm3IXKiE5yxaPDEBad07vjx3?usp=sharing).
+The reconstruction demo is ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
+
+### 2. The modifications 
+
+Some functions are added to support 3D reconstrcution:
+
+* independ_modules
+  * play_bag_from_ipad. It publishes the RGB-D image messages from the ipad+ss dataset.
+  * trigger_save_pts. It publishes a bool message after the dataset is finished.
+* octofeeder. It publish a real-time point cloud map.
+* vo_loopclosing.cpp. Two functions are added to save the offline map:
+  * save_callback(const std_msgs::Bool::ConstPtr& save). It is to save offline point cloud map.
+  * bool saveMapCallback(std_srvs::Trigger::Request& req, std_srvs::Trigger::Response& res). It is to do TSDF reconstruction.
+  
+
+
+
