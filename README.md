@@ -15,6 +15,10 @@ roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
 rosrun flvis play_bag_from_ipad ~/corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
 
 ```
+In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform point cloud reconstrcution.
+
+Open another terminal, and enter 'rosservice call /save_map'. The thread will run saveMapCallback function to perform TSDF reconstrcution.
+
 You can download an example dataset [here](https://drive.google.com/drive/folders/1gPuoolWCTm3IXKiE5yxaPDEBad07vjx3?usp=sharing).
 
 The reconstruction demo is ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
