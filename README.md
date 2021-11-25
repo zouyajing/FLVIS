@@ -21,7 +21,9 @@ Open another terminal, and enter 'rosservice call /save_map'. The thread will ru
 
 You can download an example dataset [here](https://drive.google.com/drive/folders/1gPuoolWCTm3IXKiE5yxaPDEBad07vjx3?usp=sharing).
 
-The reconstruction demo is ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
+The reconstruction demo is 
+
+![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
 
 ### 2. The modifications 
