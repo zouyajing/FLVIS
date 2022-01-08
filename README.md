@@ -6,7 +6,11 @@ The camera pose is outputted by FLVIS, and the 3D model is from PCL/open3d.
 
 Beyond the original dependecies of FLVIS, [open3d](http://www.open3d.org/) should be installed too.
 
-### 1. Run the examples
+### 1. Installation on Ubuntu 18.04 
+a. First, install ros melodic based on [ros wiki](http://wiki.ros.org/melodic/Installation/Ubuntu).
+
+
+### 2. Run the examples
 
 Run the demo:
 
@@ -26,7 +30,7 @@ The reconstruction demo is
 ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
 
-### 2. The modifications 
+### 3. The modifications 
 
 Some functions are added to support 3D reconstrcution:
 
