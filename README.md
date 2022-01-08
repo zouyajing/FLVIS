@@ -15,7 +15,7 @@ c. Download `FLVIS` to your working space
 ```
 mkdir -p ~/cat_ws/src
 cd ~/cat_ws/src
-git clone git@github.com:zouyajing/FLVIS.git
+git clone https://github.com/zouyajing/FLVIS.git
 ```
 
 d. Install the dependencies of orignal `FLVIS`
