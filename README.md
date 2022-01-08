@@ -21,6 +21,7 @@ cd FLVIS/3rdPartLib
 sudo sh install3rdPartLib.sh
 ```
 e. Install `open3d`
+
 f. Build the package
 ```
 cd ~/cat_ws
