@@ -7,7 +7,7 @@ The camera pose is outputted by FLVIS, and the 3D model is from PCL/open3d.
 Beyond the original dependecies of FLVIS, [open3d](http://www.open3d.org/) should be installed too.
 
 ### 1. Installation on Ubuntu 18.04 
-a. Install ros melodic based on [ros wiki](http://wiki.ros.org/melodic/Installation/Ubuntu).`ros-melodic-desktop-full` is preferred.
+a. Install ros melodic based on [ros wiki] (http://wiki.ros.org/melodic/Installation/Ubuntu)`ros-melodic-desktop-full` is preferred.
 
 b. Install opencv3 by `sudo apt install libopencv-dev`
 
