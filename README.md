@@ -13,7 +13,7 @@ b. Install `opencv3` by `sudo apt install libopencv-dev`
 
 c. Download `FLVIS` to your working space 
 ```
-mkdir ~/cat_ws/src
+mkdir -p ~/cat_ws/src
 cd ~/cat_ws/src
 git clone git@github.com:zouyajing/FLVIS.git
 ```
