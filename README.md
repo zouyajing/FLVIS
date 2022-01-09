@@ -52,7 +52,7 @@ sudo sh install3rdPartLib.sh
   sudo make install
   ```
 
-1.f Modify the file names of the saved models in `FLVIS/src/backend/vo_loopclosing.cpp`. In Lines 198, 264,285, and 956, replace `rick` with `your user name`, i.e. `lee` 
+1.f Modify the file names of the saved models in `FLVIS/src/backend/vo_loopclosing.cpp`. In Lines 198, 264,285, and 956, replace `rick/FLVIS` with `your user name and working space`, i.e. `lee/cat_ws` 
 
 1.g Build the package
 ```
