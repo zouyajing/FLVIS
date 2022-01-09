@@ -486,6 +486,7 @@ private:
                                        color_image,cvbridge_img1->image,tstamp);
 
     }
+    frame_n++;
     if(!is_lite_version)
     {
       cvtColor(cam_tracker->curr_frame->img0,img0_vis,CV_GRAY2BGR);
