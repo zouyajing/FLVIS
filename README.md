@@ -26,24 +26,24 @@ sudo sh install3rdPartLib.sh
 
 e. Install `open3d`
 
-  e1. Download `open3d` to `~/cat_ws/src/FLVIS/3rdPartLib`
+  `e1` Download `open3d` to `~/cat_ws/src/FLVIS/3rdPartLib`
   ```
   cd ~/cat_ws/src/FLVIS/3rdPartLib
   git clone https://github.com/isl-org/Open3D
   ```
-  e2 Update CMake version to 3.19 following [official APT repository](https://apt.kitware.com/)
+  `e2` Update CMake version to 3.19 following [official APT repository](https://apt.kitware.com/)
 
-  e3 Install the dependencies of `open3d` by `source Open3D/util/install_deps_ubuntu.sh`
+  `e3` Install the dependencies of `open3d` by `source Open3D/util/install_deps_ubuntu.sh`
 
-  e4 Modify Line 77 of `CMakeLists.txt` to use the `eigen3` in system
+  `e4` Modify Line 77 of `CMakeLists.txt` to use the `eigen3` in system
   ```
   option(USE_SYSTEM_EIGEN3          "Use system pre-installed eigen3"          ON)
   ```
-  e5 Modify Line 56 and 350 in `Open3D/cpp/open3d/geometry/Line3D.cpp`
+  `e5` Modify Line 56 and 350 in `Open3D/cpp/open3d/geometry/Line3D.cpp`
   ```
   this->Transform(t);
   ```
-  e6 Build the `open3d`
+  `e6` Build the `open3d`
   ```
   cd Open3D
   mkdir build && cd build
