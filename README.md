@@ -75,7 +75,7 @@ rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D imag
 ```
 2.d Save the reconstructed model using `pcl`. Open the third terminal, and enter `rosservice call /save_map`. The loop closing thread will run saveMapCallback function to perform pcl reconstrcution.
 
-2.e Save the reconstructed model using `open3d`. In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform TSDF reconstrcution.
+2.e Save the reconstructed model using `open3d`. In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform TSDF reconstrcution. Noticed that, the TSDF reconstruction can only be performed in a small workspace. It will fail in the long tunnel due to the memrory cost.
 
 2.f The reconstruction demo is 
 
