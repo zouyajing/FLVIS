@@ -35,9 +35,9 @@ vifusion_para6: 0.1
 
 #feature relate parameter
 #max features in a grid
-feature_para1: 30
+feature_para1: 50
 #min features in a grid
-feature_para2: 15
+feature_para2: 25
 #distance of features
 feature_para3: 5
 #goodFeaturesToTrack detector maxCorners
