@@ -238,7 +238,7 @@ private:
               length / (double)resolution, length * sdf_trunc_percentage,
               open3d::pipelines::integration::TSDFVolumeColorType::RGB8);
       ros::Rate r(5.0);
-      for(size_t i=0; i < n; i=i+1)
+      for(size_t i=0; i < n; i=i+5)
       {
         cv::cvtColor(colors[i], colors[i], cv::COLOR_BGR2RGB);
         rgbimage = o3d_cv(colors[i]);
