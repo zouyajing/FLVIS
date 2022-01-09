@@ -7,24 +7,24 @@ The camera pose is outputted by FLVIS, and the 3D model is from PCL/open3d.
 Beyond the original dependecies of FLVIS, [open3d](http://www.open3d.org/) should be installed too.
 
 ### 1. Installation on Ubuntu 18.04 
-a. Install `ros melodic` based on [ros wiki](http://wiki.ros.org/melodic/Installation/Ubuntu). `ros-melodic-desktop-full` is preferred.
+1.a Install `ros melodic` based on [ros wiki](http://wiki.ros.org/melodic/Installation/Ubuntu). `ros-melodic-desktop-full` is preferred.
 
-b. Install `opencv3` by `sudo apt install libopencv-dev`
+1.b Install `opencv3` by `sudo apt install libopencv-dev`
 
-c. Download `FLVIS` to your working space 
+1.c Download `FLVIS` to your working space 
 ```
 mkdir -p ~/cat_ws/src
 cd ~/cat_ws/src
 git clone https://github.com/zouyajing/FLVIS.git
 ```
 
-d. Install the dependencies of orignal `FLVIS`
+1.d Install the dependencies of orignal `FLVIS`
 ```
 cd FLVIS/3rdPartLib
 sudo sh install3rdPartLib.sh
 ```
 
-e. Install `open3d`
+1.e Install `open3d`
 
   `e1` Download `open3d` to `~/cat_ws/src/FLVIS/3rdPartLib`
   ```
@@ -52,10 +52,9 @@ e. Install `open3d`
   sudo make install
   ```
 
-f. Modify the file names of the saved models in `FLVIS/src/backend/vo_loopclosing.cpp`.
+1.f Modify the file names of the saved models in `FLVIS/src/backend/vo_loopclosing.cpp`. In Lines 198, 264,285, and 956, replace `rick` with `your user name`, i.e. `lee` 
 
-   In Lines 198, 264,285, and 956, replace `rick` with `your user name`, i.e. `lee`
-g. Build the package
+1.g Build the package
 ```
 cd ~/cat_ws
 catkin_make -j
@@ -67,10 +66,6 @@ catkin_make -j
 
 2.b Uncompress it and copy it to `~/corridor_ss`
 
-2.c Modify the file names of the models in `FLVIS/src/backend/vo_loopclosing.cpp`
-```
-```
-
 2.c Run the demo in two terminals
 
 ```
@@ -78,13 +73,11 @@ roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
 rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
 
 ```
-In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform point cloud reconstrcution.
+2.d Save the reconstructed model using `pcl`. Open the third terminal, and enter 'rosservice call /save_map'. The loop closing thread will run saveMapCallback function to perform pcl reconstrcution.
 
-Open another terminal, and enter 'rosservice call /save_map'. The thread will run saveMapCallback function to perform TSDF reconstrcution.
+2.e Save the reconstructed model using `open3d`. In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform TSDF reconstrcution.
 
-
-
-The reconstruction demo is 
+2.f The reconstruction demo is 
 
 ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
