@@ -22,6 +22,8 @@ git clone https://github.com/zouyajing/FLVIS.git
 ```
 cd FLVIS/3rdPartLib
 sudo sh install3rdPartLib.sh
+cd ../
+mkdir results
 ```
 
 1.e Install `open3d`
@@ -70,7 +72,7 @@ catkin_make -j
 
 ```
 roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
-rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
+rosrun flvis play_bag_from_ipad ~/corridor_ss/corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
 
 ```
 2.d Save the reconstructed model using `pcl`. Open the third terminal, and enter `rosservice call /save_map`. The loop closing thread will run saveMapCallback function to perform pcl reconstrcution.
@@ -81,7 +83,7 @@ rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D imag
 
 ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
-However, close the dense point cloud in rviz will help to improve the robustness of the system.
+Close the dense point cloud in rviz will help to improve the robustness of the system.
 
 
 ### 3. The modifications 
