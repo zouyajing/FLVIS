@@ -49,9 +49,13 @@ e. Install `open3d`
   mkdir build && cd build
   cmake ..
   make -j2
+  sudo make install
   ```
 
-f. Build the package
+f. Modify the file names of the saved models in `FLVIS/src/backend/vo_loopclosing.cpp`.
+
+   In Lines 198, 264,285, and 956, replace `rick` with `your user name`, i.e. `lee`
+g. Build the package
 ```
 cd ~/cat_ws
 catkin_make -j
@@ -59,19 +63,26 @@ catkin_make -j
 
 
 ### 2. Run the examples
+2.a Download an example dataset [here](https://drive.google.com/drive/folders/1gPuoolWCTm3IXKiE5yxaPDEBad07vjx3?usp=sharing).
 
-Run the demo:
+2.b Uncompress it and copy it to `~/corridor_ss`
+
+2.c Modify the file names of the models in `FLVIS/src/backend/vo_loopclosing.cpp`
+```
+```
+
+2.c Run the demo in two terminals
 
 ```
 roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
-rosrun flvis play_bag_from_ipad ~/corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
+rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
 
 ```
 In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform point cloud reconstrcution.
 
 Open another terminal, and enter 'rosservice call /save_map'. The thread will run saveMapCallback function to perform TSDF reconstrcution.
 
-You can download an example dataset [here](https://drive.google.com/drive/folders/1gPuoolWCTm3IXKiE5yxaPDEBad07vjx3?usp=sharing).
+
 
 The reconstruction demo is 
 
