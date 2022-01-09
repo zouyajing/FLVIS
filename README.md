@@ -81,6 +81,8 @@ rosrun flvis play_bag_from_ipad ~/corridor_ss//corridor_ss/  (publish RGB-D imag
 
 ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
 
+However, close the dense point cloud in rviz will help to improve the robustness of the system.
+
 
 ### 3. The modifications 
 
