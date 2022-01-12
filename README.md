@@ -79,6 +79,8 @@ rosrun flvis play_bag_from_ipad ~/corridor_ss/corridor_ss/  (publish RGB-D image
 
 2.e Save the reconstructed model using `open3d`. In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform TSDF reconstrcution. Noticed that, the TSDF reconstruction can only be performed in a small workspace. It will fail in the long tunnel due to the memrory cost.
 
+The models are saved in results folder.
+
 2.f The reconstruction demo is 
 
 ![here](https://github.com/zouyajing/PhD_document_for_navlab/blob/main/imgs/FLVIS_mapping.png)
